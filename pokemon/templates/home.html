@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<header>
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png" alt="" width="100" height="40" class="d-inline-block align-text-top">
+      </a>
+    </div>
+  </nav>
+</header>
+
+
+<body>
+  
+  <form action="" onsubmit="searchpokemon(event)">
+    <input type="textinput" name="pokemon" value="" autocomplete="off" placeholder="Digite o seu pokemon">
+  </form>
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Pokemon {% endblock %}
+
+
+{% block content %}
+
+{% for pokemon in pokemons %}
+
+<div class="card" style="width: 18rem; top:100rem;">
+  <img src= "{{pokemon.urlimagem}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Nome: {{pokemon.name}}</h5>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <li class="pokemon-tipo">Tipo: {{pokemon.tipo}}</li>
+    <li class="pokemon-habilidade">Habilidade: {{pokemon.habilidade}} </li>
+  </ul>
+
+</div>
+
+<p></p>
+{% endfor %}
+
+{% endblock %}
+</body>
