@@ -1,8 +1,9 @@
 from django.urls import path
 
-from pokemon.models import Pokemon
-from .views import home
+from .views import home, detalhe
 
 urlpatterns = [
     path("", home, name="home"),
+    path("<int:pk>/", detalhe, name="detalhe"),
+
   ]

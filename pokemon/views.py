@@ -12,6 +12,14 @@ def home(request):
 
   return render(request, "home.html", ctx)
 
+def detalhe(request, pk):
+  pokemon = Pokemon.objects.get(id = pk)
+
+  ctx = {"pokemon":pokemon}
+
+  return render(request, "detalhe.html", ctx)
+  
+
 
 
 

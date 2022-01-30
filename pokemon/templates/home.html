@@ -1,54 +1,63 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-
-<header>
-  <nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png" alt="" width="100" height="40" class="d-inline-block align-text-top">
-      </a>
-    </div>
-  </nav>
-</header>
-
-
-<body>
-  
-  <form action="" onsubmit="searchpokemon(event)">
-    <input type="textinput" name="pokemon" value="" autocomplete="off" placeholder="Digite o seu pokemon">
-  </form>
-
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Pokemon {% endblock %}
+{% block title %} Pokemon {% endblock %}
 
 
 {% block content %}
+ 
+{% include 'partials/navbar.html' %}
+<div class="container-fluid"> 
+  <div class="row">
 
-{% for pokemon in pokemons %}
 
-<div class="card" style="width: 18rem; top:100rem;">
-  <img src= "{{pokemon.urlimagem}}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Nome: {{pokemon.name}}</h5>
+  {% for pokemon in pokemons %}
+  <div class="col">
+  <div class="card"
+   style=
+   "background-color: rgba(255, 255, 224, 0.5);
+   box-shadow:  0px 0px 2px 2px rgba(31, 58, 147, 0.31);
+   padding: 1rem;
+   width: 20rem; 
+   top:1rem; 
+   display: flex; 
+   align-items: center;
+   ">
+
+
+    <img src="{{pokemon.urlimagem}} " class="card-img-top" alt="..." 
+    style = 
+    "width: 15rem; 
+    height: 15rem; 
+    top: 1rem; 
+    box-shadow:  0px 0px 2px 2px rgba(31, 58, 147, 0.31) ">
+    
+    <div class="card-body">
+      <h5 class="card-title" style="color: rgb(31,58,147)">Nome: {{pokemon.name}}</h5>
+    </div>
+
+    <ul class="list-group list-group-flush" 
+    style=  
+    "background-color: rgba(31, 58, 147);
+    color: rgba(255, 255, 255);
+    width: 90%;
+    height: 90%;
+    border-radius: 5px;
+    padding: 5%;
+    font-size: 1.2em;
+    font-weight: 150;
+    transition: 0.3s ease-out";>
+
+      <a class="btn btn-small" href="{% url 'detalhe' pokemon.id %}">detalhe</a>
+      <li class="pokemon-tipo">Tipo: {{pokemon.tipo}}</li>
+      <li class="pokemon-habilidade">Habilidade: {{pokemon.habilidade}} </li>
+    </ul>
+
   </div>
 
-  <ul class="list-group list-group-flush">
-    <li class="pokemon-tipo">Tipo: {{pokemon.tipo}}</li>
-    <li class="pokemon-habilidade">Habilidade: {{pokemon.habilidade}} </li>
-  </ul>
-
+  <p></p>
+  </div>
+  {% endfor %}
 </div>
-
-<p></p>
-{% endfor %}
-
+</div>
 {% endblock %}
-</body>

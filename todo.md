@@ -12,4 +12,5 @@
 
  criar o tipo do pokemon pra aparecer no html. ok
 
+    Fazer o front do arquivo. adc mais 2 personagem. 
  

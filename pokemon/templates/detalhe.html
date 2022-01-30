@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Detalhe Pokemon {% endblock %}
+
+
+{% block content %}
+ 
+{% include 'partials/navbar.html' %}
+
+{{pokemon.habilidade}}
+{{pokemon.id}}
+{{pokemon.name}}
+
+
+{% endblock %}
