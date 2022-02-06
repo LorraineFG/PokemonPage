@@ -8,5 +8,6 @@ class Command(BaseCommand):
      api = requests.get("https://pokeapi.co/api/v2/pokemon?offset=20&limit=20").json()
      #breakpoint()
      for pokemon in api["results"]:
-       print(pokemon["name"])
+       print(pokemon)
+       Pokemon.objects.get_or_create(name = pokemon["name"], urlpokemon = pokemon["url"])
     

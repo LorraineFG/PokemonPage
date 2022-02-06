@@ -7,6 +7,8 @@
 {% block content %}
  
 {% include 'partials/navbar.html' %}
+
+
 <div 
   class="container-fluid" 
   style =" 
@@ -20,7 +22,7 @@
   <div class="row">
 
       {% for pokemon in pokemons %}
-
+      
       <div class="col">
         <div 
             class="card"
@@ -61,19 +63,24 @@
               
                   href="{% url 'detalhe' pokemon.id %}"
               >
-                  {{pokemon.name}}
+              {{pokemon.name}}
                 </a>
                   
       
         </div>
 
         <p></p>
-
+     
+       
+        {{api.name}}
+        
+    
       </div>
     {% endfor %}
   </div>
 
-  {{api}}
+ 
 
 </div>
 {% endblock %}
+

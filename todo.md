@@ -15,5 +15,8 @@
 
  fazer pagina do detalhe ok
 
- Manipulação de dicionário em Python, como pegar uma requisição e salvar no banco de dados; 
+ Manipulação de dicionário em Python, como pegar uma requisição e salvar no banco de dados; comandos personalizados em django** ok 
+---  https://simpleisbetterthancomplex.com/ 
+ 
+
  
